@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     EMPLOYEE_NAME = emp_response.json()["name"]
 
-    print("Employee {} is done with tasks ({}/{})".
+    print("Employee {} is done with tasks ({}/{}):".
           format(EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
 
     for task in TASK_TITLE:
