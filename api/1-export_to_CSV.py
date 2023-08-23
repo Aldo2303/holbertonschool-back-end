@@ -13,16 +13,15 @@ if __name__ == "__main__":
         exit()
 
     emp_response = requests.get(
-        f"https://jsonplaceholder.typicode.com/users/{emp_id}").json()
+        f'https://jsonplaceholder.typicode.com/users/{emp_id}').json()
     todos_response = requests.get(
-        f"https://jsonplaceholder.typicode.com/users/{emp_id}/todos").json()
-    
-    name = emp_response["username"]
-    file_name = f"{emp_id}.cvs"
+        f'https://jsonplaceholder.typicode.com/users/{emp_id}/todos').json()
 
+    name = emp_response['username']
+    file_name = f"{emp_id}.csv"
     with open(file_name, "w", encoding="utf-8") as file:
         for task in todos_response:
-            task_completed = task.get("completed")
-            task_title = task.get("title")
+            task_completed = task.get('completed')
+            task_title = task.get('title')
             file.write(
-                f'"{emp_id}", "{name}", "{task_completed}", "{task_title}"\n')
+                f'"{emp_id}","{name}","{task_completed}","{task_title}"\n')
